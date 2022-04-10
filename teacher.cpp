@@ -2,6 +2,7 @@
 
 Teacher::Teacher()
 {
+	//
 
 }
 

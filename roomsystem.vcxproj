@@ -145,6 +145,7 @@
     <ClCompile Include="roomsystem.cpp" />
     <ClCompile Include="student.cpp" />
     <ClCompile Include="teacher.cpp" />
+    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="computerRoom.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="orderFile.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="teacher.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,6 +11,7 @@ using namespace std;
 
 void managerMenu(Identity*& manager);
 void studentMenu(Identity*& student);
+void teacherMenu(Identity*& teacher);
 
 void LoginIn(string fileName, int type)
 {
@@ -79,6 +80,7 @@ void LoginIn(string fileName, int type)
 				system("pause");
 				system("cls");
 				person = new Teacher(id, name, pwd);
+				teacherMenu(person);
 				return;
 			}
 		}
@@ -182,6 +184,37 @@ void studentMenu(Identity*& student)
 		{
 			delete student;
 			cout << "Logout succeed!" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
+
+void teacherMenu(Identity*& teacher)
+{
+	while (true)
+	{
+		
+		teacher->operMenu();
+
+		Teacher* tea = (Teacher*)teacher;
+		int select = 0;
+
+		cin >> select;
+
+		if (select == 1)
+		{
+			tea->showAllOrder();
+		}
+		else if (select == 2)
+		{
+			tea->validOrder();
+		}
+		else
+		{
+			delete teacher;
+			cout << "logout succeed!" << endl;
 			system("pause");
 			system("cls");
 			return;

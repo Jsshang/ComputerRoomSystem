@@ -10,6 +10,7 @@ using namespace std;
 #include <string>
 
 void managerMenu(Identity*& manager);
+void studentMenu(Identity*& student);
 
 void LoginIn(string fileName, int type)
 {
@@ -59,6 +60,7 @@ void LoginIn(string fileName, int type)
 				system("cls");
 				person = new Student(id, name, pwd);
 
+				studentMenu(person);
 				return;
 			}
 		}
@@ -141,6 +143,44 @@ void managerMenu(Identity*& manager)
 		else
 		{
 			delete manager;
+			cout << "Logout succeed!" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
+
+void studentMenu(Identity*& student)
+{
+	while (true)
+	{
+		student->operMenu();
+
+		Student* stu = (Student*)student;
+		int select = 0;
+
+		cin >> select;
+
+		if (select == 1)
+		{
+			stu->applyOrder();
+		}
+		else if (select == 2)
+		{
+			stu->showMyOrder();
+		}
+		else if (select == 3)
+		{
+			stu->showAllOrder();
+		}
+		else if (select == 4)
+		{
+			stu->cancelOrder();
+		}
+		else
+		{
+			delete student;
 			cout << "Logout succeed!" << endl;
 			system("pause");
 			system("cls");
